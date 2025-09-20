@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -19,7 +19,7 @@ const AdminDashboard = () => {
         const token = localStorage.getItem("token");
         const [bookingsRes, emergenciesRes, caregiverBookingsRes] =
           await Promise.all([
-            axios.get("http://localhost:5000/api/bookings", {
+            axios.get("https://pet-care-api-nine.vercel.app/api/bookings", {
               headers: { Authorization: `Bearer ${token}` },
             }),
             axios.get("/api/emergency", {

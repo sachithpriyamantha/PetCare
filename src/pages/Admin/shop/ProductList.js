@@ -1,13 +1,12 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { FaFilter, FaPlus, FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import ProductCard from './ProductCard';
 import { Dialog } from '@headlessui/react';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { FaFilter, FaPlus, FaSearch } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
 import { ImSpinner8 } from 'react-icons/im';
-import {ArrowLeftIcon } from '@heroicons/react/24/outline';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ProductCard from './ProductCard';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -20,7 +19,7 @@ const navigate = useNavigate();
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://pet-care-api-nine.vercel.app/api/products');
         setProducts(response.data);
       } catch (err) {
         setError('Failed to fetch products');
@@ -35,7 +34,7 @@ const navigate = useNavigate();
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/products/${id}`);
+        await axios.delete(`https://pet-care-api-nine.vercel.app/api/products/${id}`);
         setProducts(products.filter(product => product._id !== id));
       } catch (err) {
         console.error('Error deleting product:', err);

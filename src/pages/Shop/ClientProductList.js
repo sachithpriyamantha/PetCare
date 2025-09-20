@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaSearch, FaFilter, FaShoppingCart, FaTimes } from 'react-icons/fa';
-import ClientProductCard from './ClientProductCard';
-import { useCart } from '../../context/CartContext';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { FaFilter, FaSearch, FaShoppingCart, FaTimes } from 'react-icons/fa';
 import Cart from '../../components/Cart';
+import { useCart } from '../../context/CartContext';
+import ClientProductCard from './ClientProductCard';
 
 const ClientProductList = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +24,7 @@ const ClientProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://pet-care-api-nine.vercel.app/api/products');
         setProducts(response.data);
         setLoading(false);
       } catch (err) {

@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { PawPrint, Save, X, Upload, AlertCircle } from 'lucide-react';
 import axios from 'axios';
-import { AuthContext } from '../../context/AuthContext';  
+import { AlertCircle, PawPrint, Save, Upload, X } from 'lucide-react';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 const EditPetProfile = () => {
   const { id } = useParams();
@@ -37,7 +37,7 @@ const EditPetProfile = () => {
   useEffect(() => {
     const fetchPet = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/pets/${id}`, {
+        const response = await axios.get(`https://pet-care-api-nine.vercel.app/api/pets/${id}`, {
           withCredentials: true
         });
         
@@ -70,7 +70,7 @@ const EditPetProfile = () => {
         });
         
         if (pet.image) {
-          setImagePreview(`http://localhost:5000/${pet.image}`);
+          setImagePreview(`https://pet-care-api-nine.vercel.app/${pet.image}`);
         }
       } catch (err) {
         console.error('Error fetching pet:', err);
@@ -132,7 +132,7 @@ const EditPetProfile = () => {
         }
       });
 
-      await axios.put(`http://localhost:5000/api/pets/${id}`, submitData, {
+      await axios.put(`https://pet-care-api-nine.vercel.app/api/pets/${id}`, submitData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

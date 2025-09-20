@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useRef, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
@@ -43,7 +43,7 @@ const AddProduct = () => {
         stockQuantity: parseInt(stockQuantity)
       };
 
-      await axios.post('http://localhost:5000/api/products', productData);
+      await axios.post('https://pet-care-api-nine.vercel.app/api/products', productData);
       setLoading(false);
       navigate('/products');
     } catch (err) {

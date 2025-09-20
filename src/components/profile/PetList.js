@@ -1,16 +1,16 @@
-import React, { useEffect, useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import {
-  PlusCircle,
+  Cake,
+  Heart,
   PawPrint,
+  PlusCircle,
   Search,
   Tag,
-  Heart,
-  Cake,
   Trash2,
   User,
 } from "lucide-react";
-import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -29,7 +29,7 @@ const PetList = () => {
   const fetchPets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/pets", {
+      const response = await axios.get("https://pet-care-api-nine.vercel.app/api/pets", {
         withCredentials: true,
       });
 
@@ -71,7 +71,7 @@ const PetList = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/api/pets/${petId}`, {
+        await axios.delete(`https://pet-care-api-nine.vercel.app/api/pets/${petId}`, {
           withCredentials: true,
         });
 
@@ -198,7 +198,7 @@ const PetList = () => {
                 <div className="h-48 bg-gray-200 relative">
                   {pet.image ? (
                     <img
-                      src={`http://localhost:5000/${pet.image}`}
+                      src={`https://pet-care-api-nine.vercel.app/${pet.image}`}
                       alt={pet.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {

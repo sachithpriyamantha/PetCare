@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { AlertTriangle, Cake, Camera, Droplet, Heart, PawPrint, Shield, Stethoscope, Tag, User, Weight, X } from 'lucide-react';
+import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { PawPrint, Calendar, Camera, Tag, Weight, Heart, Cake, User, Droplet, Shield, Stethoscope, AlertTriangle, X } from 'lucide-react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const PetRegistrationForm = () => {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ const PetRegistrationForm = () => {
       if (birthDate) petFormData.append('birthDate', birthDate);
 
       const response = await axios.post(
-        'http://localhost:5000/api/pets',
+        'https://pet-care-api-nine.vercel.app/api/pets',
         petFormData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );

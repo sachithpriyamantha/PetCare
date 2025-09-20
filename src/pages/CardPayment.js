@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 
 const PaymentForm = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +42,7 @@ const PaymentForm = () => {
         }
       };
 
-      const response = await axios.post('http://localhost:5000/api/payments/process', paymentData);
+      const response = await axios.post('https://pet-care-api-nine.vercel.app/api/payments/process', paymentData);
       
       setPaymentStatus({
         success: true,

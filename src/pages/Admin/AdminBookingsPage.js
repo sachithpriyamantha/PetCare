@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { ArrowLeftIcon, ArrowPathIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import axios from 'axios';
-import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircleIcon, XCircleIcon, ArrowPathIcon ,ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 const AdminBookingsPage = () => {
   const [bookings, setBookings] = useState([]);
@@ -20,7 +20,7 @@ const AdminBookingsPage = () => {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/bookings', {
+      const response = await axios.get('https://pet-care-api-nine.vercel.app/api/bookings', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -51,7 +51,7 @@ const AdminBookingsPage = () => {
       setError('');
 
       const response = await axios.post(
-        `http://localhost:5000/api/admin/bookings/${bookingId}/status`,
+        `https://pet-care-api-nine.vercel.app/api/admin/bookings/${bookingId}/status`,
         { status },
         {
           headers: {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaBox, FaEdit, FaPaw, FaRegStar, FaShoppingCart, FaStar, FaTag, FaTrash } from 'react-icons/fa';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`https://pet-care-api-nine.vercel.app/api/products/${id}`);
         setProduct(response.data);
         setLoading(false);
       } catch (err) {
@@ -32,7 +32,7 @@ const ProductDetail = () => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/products/${id}`);
+        await axios.delete(`https://pet-care-api-nine.vercel.app/api/products/${id}`);
         navigate('/');
       } catch (err) {
         console.error('Error deleting product:', err);

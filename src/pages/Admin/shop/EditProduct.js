@@ -1,15 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
-  FaArrowLeft,
-  FaBox,
-  FaClipboardList,
-  FaDollarSign,
-  FaImage,
-  FaPaw,
-  FaSave,
-  FaTag,
-  FaTimes,
+    FaArrowLeft,
+    FaBox,
+    FaClipboardList,
+    FaDollarSign,
+    FaImage,
+    FaPaw,
+    FaSave,
+    FaTag,
+    FaTimes,
 } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -47,7 +47,7 @@ const EditProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/products/${id}`
+          `https://pet-care-api-nine.vercel.app/api/products/${id}`
         );
         const product = response.data;
 
@@ -101,7 +101,7 @@ const EditProduct = () => {
         stockQuantity: parseInt(stockQuantity),
       };
 
-      await axios.put(`http://localhost:5000/api/products/${id}`, productData);
+      await axios.put(`https://pet-care-api-nine.vercel.app/api/products/${id}`, productData);
       setSubmitLoading(false);
       setSuccess("Product updated successfully!");
 
