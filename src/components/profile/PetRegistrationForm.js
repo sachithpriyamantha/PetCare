@@ -62,7 +62,7 @@ const PetRegistrationForm = () => {
       if (birthDate) petFormData.append('birthDate', birthDate);
 
       const response = await axios.post(
-        'https://pet-care-api-nine.vercel.app/api/pets',
+        'https://pet-care-api-ten.vercel.app/api/pets',
         petFormData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );

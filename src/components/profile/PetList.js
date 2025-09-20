@@ -29,7 +29,7 @@ const PetList = () => {
   const fetchPets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://pet-care-api-nine.vercel.app/api/pets", {
+      const response = await axios.get("https://pet-care-api-ten.vercel.app/api/pets", {
         withCredentials: true,
       });
 
@@ -71,7 +71,7 @@ const PetList = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`https://pet-care-api-nine.vercel.app/api/pets/${petId}`, {
+        await axios.delete(`https://pet-care-api-ten.vercel.app/api/pets/${petId}`, {
           withCredentials: true,
         });
 
@@ -198,7 +198,7 @@ const PetList = () => {
                 <div className="h-48 bg-gray-200 relative">
                   {pet.image ? (
                     <img
-                      src={`https://pet-care-api-nine.vercel.app/${pet.image}`}
+                      src={`https://pet-care-api-ten.vercel.app/${pet.image}`}
                       alt={pet.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {

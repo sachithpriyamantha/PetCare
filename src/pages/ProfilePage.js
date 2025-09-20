@@ -1,19 +1,19 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { AuthContext } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import { 
-  UserCircleIcon, 
-  EnvelopeIcon, 
-  PencilSquareIcon, 
+import {
   ArrowLeftOnRectangleIcon,
   CameraIcon,
   CheckIcon,
+  EnvelopeIcon,
+  PencilSquareIcon,
+  UserCircleIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
-const BASE_URL = process.env.REACT_APP_API_URL || 'https://pet-care-api-nine.vercel.app/';
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://pet-care-api-ten.vercel.app/';
 
 const ProfilePage = () => {
   const { user, logout, setUser } = useContext(AuthContext);

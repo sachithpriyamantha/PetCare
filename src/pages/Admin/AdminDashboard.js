@@ -19,7 +19,7 @@ const AdminDashboard = () => {
         const token = localStorage.getItem("token");
         const [bookingsRes, emergenciesRes, caregiverBookingsRes] =
           await Promise.all([
-            axios.get("https://pet-care-api-nine.vercel.app/api/bookings", {
+            axios.get("https://pet-care-api-ten.vercel.app/api/bookings", {
               headers: { Authorization: `Bearer ${token}` },
             }),
             axios.get("/api/emergency", {

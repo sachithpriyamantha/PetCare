@@ -16,7 +16,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://pet-care-api-nine.vercel.app/api/products/${id}`);
+        const response = await axios.get(`https://pet-care-api-ten.vercel.app/api/products/${id}`);
         setProduct(response.data);
         setLoading(false);
       } catch (err) {
@@ -32,7 +32,7 @@ const ProductDetail = () => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`https://pet-care-api-nine.vercel.app/api/products/${id}`);
+        await axios.delete(`https://pet-care-api-ten.vercel.app/api/products/${id}`);
         navigate('/');
       } catch (err) {
         console.error('Error deleting product:', err);

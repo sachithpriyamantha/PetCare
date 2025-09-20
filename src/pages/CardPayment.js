@@ -42,7 +42,7 @@ const PaymentForm = () => {
         }
       };
 
-      const response = await axios.post('https://pet-care-api-nine.vercel.app/api/payments/process', paymentData);
+      const response = await axios.post('https://pet-care-api-ten.vercel.app/api/payments/process', paymentData);
       
       setPaymentStatus({
         success: true,

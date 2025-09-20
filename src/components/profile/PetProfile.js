@@ -37,7 +37,7 @@ const EditPetProfile = () => {
   useEffect(() => {
     const fetchPet = async () => {
       try {
-        const response = await axios.get(`https://pet-care-api-nine.vercel.app/api/pets/${id}`, {
+        const response = await axios.get(`https://pet-care-api-ten.vercel.app/api/pets/${id}`, {
           withCredentials: true
         });
         
@@ -70,7 +70,7 @@ const EditPetProfile = () => {
         });
         
         if (pet.image) {
-          setImagePreview(`https://pet-care-api-nine.vercel.app/${pet.image}`);
+          setImagePreview(`https://pet-care-api-ten.vercel.app/${pet.image}`);
         }
       } catch (err) {
         console.error('Error fetching pet:', err);
@@ -132,7 +132,7 @@ const EditPetProfile = () => {
         }
       });
 
-      await axios.put(`https://pet-care-api-nine.vercel.app/api/pets/${id}`, submitData, {
+      await axios.put(`https://pet-care-api-ten.vercel.app/api/pets/${id}`, submitData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

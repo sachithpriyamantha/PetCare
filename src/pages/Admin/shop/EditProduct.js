@@ -47,7 +47,7 @@ const EditProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `https://pet-care-api-nine.vercel.app/api/products/${id}`
+          `https://pet-care-api-ten.vercel.app/api/products/${id}`
         );
         const product = response.data;
 
@@ -101,7 +101,7 @@ const EditProduct = () => {
         stockQuantity: parseInt(stockQuantity),
       };
 
-      await axios.put(`https://pet-care-api-nine.vercel.app/api/products/${id}`, productData);
+      await axios.put(`https://pet-care-api-ten.vercel.app/api/products/${id}`, productData);
       setSubmitLoading(false);
       setSuccess("Product updated successfully!");
 

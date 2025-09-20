@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get('https://pet-care-api-nine.vercel.app/api/auth/me', { withCredentials: true });
+        const res = await axios.get('https://pet-care-api-ten.vercel.app/api/auth/me', { withCredentials: true });
         setUser(res.data);
       } catch (err) {
         setUser(null);
@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const register = async (username, email, password) => {
-    const res = await axios.post('https://pet-care-api-nine.vercel.app/api/auth/register', 
+    const res = await axios.post('https://pet-care-api-ten.vercel.app/api/auth/register', 
       { username, email, password },
       { withCredentials: true }
     );
@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async (email, password) => {
-    const res = await axios.post('https://pet-care-api-nine.vercel.app/api/auth/login', 
+    const res = await axios.post('https://pet-care-api-ten.vercel.app/api/auth/login', 
       { email, password },
       { withCredentials: true }
     );
@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await axios.post('https://pet-care-api-nine.vercel.app/api/auth/logout', {}, { withCredentials: true });
+    await axios.post('https://pet-care-api-ten.vercel.app/api/auth/logout', {}, { withCredentials: true });
     setUser(null);
   };
 

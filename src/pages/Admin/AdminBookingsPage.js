@@ -20,7 +20,7 @@ const AdminBookingsPage = () => {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://pet-care-api-nine.vercel.app/api/bookings', {
+      const response = await axios.get('https://pet-care-api-ten.vercel.app/api/bookings', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -51,7 +51,7 @@ const AdminBookingsPage = () => {
       setError('');
 
       const response = await axios.post(
-        `https://pet-care-api-nine.vercel.app/api/admin/bookings/${bookingId}/status`,
+        `https://pet-care-api-ten.vercel.app/api/admin/bookings/${bookingId}/status`,
         { status },
         {
           headers: {

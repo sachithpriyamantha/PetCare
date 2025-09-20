@@ -24,7 +24,7 @@ const ClientProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('https://pet-care-api-nine.vercel.app/api/products');
+        const response = await axios.get('https://pet-care-api-ten.vercel.app/api/products');
         setProducts(response.data);
         setLoading(false);
       } catch (err) {

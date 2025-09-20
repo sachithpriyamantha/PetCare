@@ -19,7 +19,7 @@ const navigate = useNavigate();
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('https://pet-care-api-nine.vercel.app/api/products');
+        const response = await axios.get('https://pet-care-api-ten.vercel.app/api/products');
         setProducts(response.data);
       } catch (err) {
         setError('Failed to fetch products');
@@ -34,7 +34,7 @@ const navigate = useNavigate();
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`https://pet-care-api-nine.vercel.app/api/products/${id}`);
+        await axios.delete(`https://pet-care-api-ten.vercel.app/api/products/${id}`);
         setProducts(products.filter(product => product._id !== id));
       } catch (err) {
         console.error('Error deleting product:', err);

@@ -43,7 +43,7 @@ const AddProduct = () => {
         stockQuantity: parseInt(stockQuantity)
       };
 
-      await axios.post('https://pet-care-api-nine.vercel.app/api/products', productData);
+      await axios.post('https://pet-care-api-ten.vercel.app/api/products', productData);
       setLoading(false);
       navigate('/products');
     } catch (err) {
